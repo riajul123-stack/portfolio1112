@@ -1,0 +1,714 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<title>Secret Love Adventure ❤️</title>
+
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Georgia,serif;
+}
+
+
+body{
+
+height:100vh;
+overflow:hidden;
+
+
+display:flex;
+align-items:center;
+justify-content:center;
+
+
+background:
+radial-gradient(circle,#ff8fab,#7209b7,#10002b);
+
+
+color:white;
+
+}
+
+
+
+
+.moon{
+
+position:absolute;
+
+top:60px;
+right:80px;
+
+height:130px;
+width:130px;
+
+
+background:white;
+
+border-radius:50%;
+
+
+box-shadow:0 0 80px white;
+
+}
+
+
+
+
+.star{
+
+position:absolute;
+
+width:3px;
+height:3px;
+
+background:white;
+
+border-radius:50%;
+
+animation:blink 2s infinite;
+
+}
+
+
+
+@keyframes blink{
+
+50%{
+
+opacity:.2;
+
+}
+
+}
+
+
+
+
+
+.page{
+
+
+position:absolute;
+
+
+width:90%;
+max-width:520px;
+
+
+padding:40px;
+
+
+text-align:center;
+
+
+background:rgba(255,255,255,.15);
+
+
+backdrop-filter:blur(20px);
+
+
+border-radius:35px;
+
+
+box-shadow:0 0 60px pink;
+
+
+
+opacity:0;
+
+pointer-events:none;
+
+
+transform:scale(.7);
+
+
+transition:1s;
+
+
+}
+
+
+.page.active{
+
+
+opacity:1;
+
+pointer-events:auto;
+
+
+transform:scale(1);
+
+
+}
+
+
+
+
+
+h1{
+
+font-size:40px;
+
+text-shadow:0 0 20px pink;
+
+}
+
+
+
+p{
+
+font-size:18px;
+
+line-height:1.7;
+
+margin:20px;
+
+}
+
+
+
+button{
+
+
+display:block;
+
+width:90%;
+
+
+margin:12px auto;
+
+
+padding:15px;
+
+
+border:none;
+
+
+border-radius:50px;
+
+
+background:
+
+linear-gradient(45deg,#ff006e,#ff85a1);
+
+
+color:white;
+
+
+font-size:18px;
+
+
+cursor:pointer;
+
+
+transition:.4s;
+
+
+}
+
+
+
+button:hover{
+
+transform:scale(1.08);
+
+}
+
+
+
+
+.hidden{
+
+display:none;
+
+}
+
+
+
+
+
+.heart{
+
+font-size:90px;
+
+animation:beat 1s infinite;
+
+}
+
+
+
+@keyframes beat{
+
+
+50%{
+
+transform:scale(1.3);
+
+}
+
+}
+
+
+
+
+
+.float{
+
+
+position:absolute;
+
+bottom:-30px;
+
+
+font-size:30px;
+
+
+animation:fly 8s linear;
+
+
+}
+
+
+
+@keyframes fly{
+
+
+100%{
+
+transform:translateY(-120vh);
+
+opacity:0;
+
+}
+
+}
+
+
+
+</style>
+
+</head>
+
+
+<body>
+
+
+<div class="moon"></div>
+
+
+
+<!-- PAGE 1 -->
+
+
+<div class="page active" id="p1">
+
+
+<h1>
+
+Welcome Sabila❤️
+
+</h1>
+
+
+<p>
+
+A small journey created for someone special ✨
+
+</p>
+
+
+<button onclick="next(2)">
+
+Start Adventure 🌙
+
+</button>
+
+
+</div>
+
+
+
+
+
+
+<!-- PAGE 2 -->
+
+
+<div class="page" id="p2">
+
+
+<h1>
+
+Before the letter... 💌
+
+</h1>
+
+
+<p>
+
+You must pass the heart quiz 😌
+
+</p>
+
+
+<button onclick="next(3)">
+
+Accept Challenge 💖
+
+</button>
+
+
+</div>
+
+
+
+
+
+
+
+<!-- QUIZ 1 -->
+
+
+<div class="page" id="p3">
+
+
+<h1>
+
+Question 1 🌹
+
+</h1>
+
+
+<p>
+
+What makes a person special?
+
+</p>
+
+
+<button onclick="wrong()">
+
+Money 💰
+
+</button>
+
+
+<button onclick="correct(4)">
+
+Heart & Feelings ❤️
+
+</button>
+
+
+<button onclick="wrong()">
+
+Popularity ⭐
+
+</button>
+
+
+</div>
+
+
+
+
+
+
+
+<!-- QUIZ 2 -->
+
+
+<div class="page" id="p4">
+
+
+<h1>
+
+Question 2 ✨
+
+</h1>
+
+
+<p>
+
+What makes memories beautiful?
+
+</p>
+
+
+<button onclick="wrong()">
+
+Expensive things
+
+</button>
+
+
+<button onclick="correct(5)">
+
+The person beside you ❤️
+
+</button>
+
+
+<button onclick="wrong()">
+
+Fame
+
+</button>
+
+
+</div>
+
+
+
+
+
+
+
+<!-- QUIZ 3 -->
+
+
+<div class="page" id="p5">
+
+
+<h1>
+
+Final Question 🔐
+
+</h1>
+
+
+<p>
+
+Ready for the last secret?
+
+</p>
+
+
+<button onclick="correct(6)">
+
+Yes ❤️
+
+</button>
+
+
+<button onclick="wrong()">
+
+No 😢
+
+</button>
+
+
+</div>
+
+
+
+
+
+
+
+
+<!-- FINAL -->
+
+
+<div class="page" id="p6">
+
+
+<div class="heart">
+
+❤️
+
+</div>
+
+
+<h1>
+
+Unlocked 💌
+
+</h1>
+
+
+<p>
+
+
+You completed the journey.
+
+
+So here is my real message...
+
+
+<br><br>
+
+
+Sometimes someone appears
+
+
+and slowly becomes your favorite person.
+
+
+Your smile, your presence,
+
+
+your little moments...
+
+
+became special to me.
+
+
+<br><br>
+
+
+<strong>
+
+I REALLY LIKE YOU ❤️
+
+</strong>
+
+
+</p>
+
+
+
+</div>
+
+
+
+
+
+
+
+<script>
+
+
+
+
+
+function next(n){
+
+
+document.querySelector(".active")
+.classList.remove("active");
+
+
+
+setTimeout(()=>{
+
+
+document
+.getElementById("p"+n)
+.classList.add("active");
+
+
+},300);
+
+
+}
+
+
+
+
+
+function correct(n){
+
+
+alert("Correct ❤️✨");
+
+
+next(n);
+
+
+}
+
+
+
+function wrong(){
+
+
+alert("Not this one 😅 Try again ❤️");
+
+
+}
+
+
+
+
+
+// stars
+
+
+for(let i=0;i<150;i++){
+
+
+let s=document.createElement("div");
+
+
+s.className="star";
+
+
+s.style.left=Math.random()*100+"vw";
+
+
+s.style.top=Math.random()*100+"vh";
+
+
+document.body.appendChild(s);
+
+
+}
+
+
+
+
+
+
+// hearts
+
+
+setInterval(()=>{
+
+
+let h=document.createElement("div");
+
+
+h.className="float";
+
+
+h.innerHTML=
+["❤️","💖","🌹","✨"]
+[Math.floor(Math.random()*4)];
+
+
+h.style.left=Math.random()*100+"vw";
+
+
+document.body.appendChild(h);
+
+
+
+setTimeout(()=>{
+
+h.remove();
+
+},8000);
+
+
+
+},300);
+
+
+
+
+
+</script>
+
+
+</body>
+
+</html>
